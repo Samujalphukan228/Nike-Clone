@@ -27,20 +27,24 @@ const Nav = () => {
     });
   };
 
-  const showsearch = () => {
-    gsap.to("#search", {
-      top: 0,
-      right: 0,
-      duration: 0.2,
-    });
-  };
-  const hidesearch = () => {
-    gsap.to("#search", {
-      top: 14,
-      right: "-100%",
-      duration: 0.2,
-    });
-  };
+const showsearch = () => {
+  gsap.to("#search", {
+    top: 0,
+    right: 0,
+    duration: 0.2,
+  });
+  document.body.style.overflow = "hidden";
+};
+
+const hidesearch = () => {
+  gsap.to("#search", {
+    top: 0,
+    right: "-100%",
+    duration: 0.2,
+  });
+  document.body.style.overflow = "auto";
+};
+
 
   return (
     <>
@@ -49,7 +53,7 @@ const Nav = () => {
         className="fixed h-[100%] w-[100%] right-[-100%] bg-[#00000081]  z-40"
       ></div>
 
-      <nav className=" bg-white px-6 flex items-center justify-between">
+      <nav className="bg-white px-6 flex items-center justify-between">
         <Link to="/">
           <img
             className="h-13 w-auto"
@@ -98,7 +102,7 @@ const Nav = () => {
 
         <div
           id="search"
-          className="fixed  bg-[#ffffff] z-50   w-[100%] h-[100%]  top-14 right-[-100%] px-6 mt-4 lg:mt-0 lg:h-[70%]"
+          className="fixed bg-[#ffffff] z-50 w-full h-full top-0 right-[-100%] px-6 pt-4 lg:pt-0 lg:h-[70%] "
         >
           <div className="flex justify-between items-center gap-6">
             <img
