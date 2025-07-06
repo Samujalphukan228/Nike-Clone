@@ -46,7 +46,7 @@ const Nav = () => {
     <>
       <div
         id="TbgNav"
-        className="absolute h-[100%] w-[100%] right-[-100%] bg-[#00000081]"
+        className="fixed h-[100%] w-[100%] right-[-100%] bg-[#00000081]  z-40"
       ></div>
 
       <nav className=" bg-white px-6 flex items-center justify-between">
@@ -70,16 +70,16 @@ const Nav = () => {
           </Link>
         </div>
 
-        <div className="flex items-center gap-6 text-xl text-[#808080]">
+        <div className="flex items-center justify-center gap-6 text-xl text-[#808080]">
           <div className=" lg:hidden">
             <i onClick={showsearch} className="fas fa-search "></i>
           </div>
 
-          <div onClick={showsearch} className=" items-center hidden lg:flex  bg-gray-100 rounded-full px-3 py-1.5  ">
-            <i
-              
-              className="fas fa-search text-gray-500 hover:text-black cursor-pointer text-lg mr-3"
-            ></i>
+          <div
+            onClick={showsearch}
+            className=" items-center hidden lg:flex  bg-gray-100 rounded-full px-3 py-1.5  "
+          >
+            <i className="fas fa-search text-gray-500 hover:text-black cursor-pointer text-lg mr-3"></i>
             <input
               type="text"
               placeholder="Search"
@@ -98,7 +98,7 @@ const Nav = () => {
 
         <div
           id="search"
-          className="absolute bg-[#ffffff]   w-[100%] h-[100%]  top-14 right-[-100%] px-6 mt-4 lg:mt-0 lg:h-[70%]"
+          className="fixed  bg-[#ffffff] z-50   w-[100%] h-[100%]  top-14 right-[-100%] px-6 mt-4 lg:mt-0 lg:h-[70%]"
         >
           <div className="flex justify-between items-center gap-6">
             <img
@@ -158,7 +158,7 @@ const Nav = () => {
 
         <div
           id="nav"
-          className="absolute  bg-white w-[80%] h-[100%] -right-[80%] top-0 p-5 flex flex-col"
+          className="fixed  bg-white w-[80%] h-[100%] -right-[80%] top-0 p-5 flex flex-col z-50"
         >
           <i
             onClick={hideNav}
@@ -226,4 +226,3 @@ const Nav = () => {
 };
 
 export default Nav;
-
